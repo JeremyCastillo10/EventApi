@@ -4,10 +4,8 @@
 
 namespace EventApi.Migrations
 {
-    /// <inheritdoc />
-    public partial class inicial : Migration
+    public partial class ini : Migration
     {
-        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
@@ -89,7 +87,6 @@ namespace EventApi.Migrations
                 });
         }
 
-        /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(

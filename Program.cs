@@ -21,20 +21,23 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var app = builder.Build();
-
 // Configure the HTTP request pipeline.
 //if (app.Environment.IsDevelopment())
 //{
-app.UseCors(option =>{
-    option.WithOrigins("https://localhost:3000");
-    option.AllowAnyMethod();
-    option.AllowAnyHeader();
-});
+builder.Services.AddCors(o => o.AddPolicy("AllowAnyOrigin",
+                      builder =>
+                       {
+                       builder.AllowAnyOrigin()
+                              .AllowAnyMethod()
+                              .AllowAnyHeader();
+              }));
+
+  var app = builder.Build();
 app.UseSwagger();
 app.UseSwaggerUI();
 //}
 
+app.UseCors("AllowAnyOrigin");
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
