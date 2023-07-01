@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EventApi.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20230625202651_ini")]
+    [Migration("20230701221128_ini")]
     partial class ini
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -35,8 +35,16 @@ namespace EventApi.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("NumeroAsiento")
-                        .HasColumnType("int");
+                    b.Property<string>("Evento")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NumeroAsiento")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Precio")
+                        .HasColumnType("float");
 
                     b.Property<string>("Seccion")
                         .IsRequired()

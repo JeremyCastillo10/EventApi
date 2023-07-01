@@ -33,8 +33,16 @@ namespace EventApi.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("NumeroAsiento")
-                        .HasColumnType("int");
+                    b.Property<string>("Evento")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NumeroAsiento")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Precio")
+                        .HasColumnType("float");
 
                     b.Property<string>("Seccion")
                         .IsRequired()

@@ -14,9 +14,11 @@ namespace EventApi.Migrations
                 {
                     AsientoId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    NumeroAsiento = table.Column<int>(type: "int", nullable: false),
+                    NumeroAsiento = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Evento = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Seccion = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Disponibilidad = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Disponibilidad = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Precio = table.Column<double>(type: "float", nullable: false)
                 },
                 constraints: table =>
                 {
